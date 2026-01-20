@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, td, th {
+    border: 1px solid black; /* single border */
+    padding: 8px;
+  }
+  table { border-collapse: collapse; }
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+ input[type="number"]:focus {
+    border: 1.5px solid blue;
+    outline: none; 
+}
+
+    </style>
+</head>
+<body>
+    <form action="" method="post">
+    <fieldset>
+        <legend>Running Total of all TextBoxes</legend>
+    <table border="1"  ;>
+        <!-- <caption>Running Total of all TextBoxes</caption> -->
+        <tr>
+            <th>No.</th>
+            <th>Item</th>
+            <th>Price</th>
+        </tr> 
+        <tr>
+            <td>1</td>
+            <td>Milk:</td>
+            <td><input type="number" id="price1" name="price1"></td>
+
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Bread:</td>
+            <td><input type="number" id="price2" name="price2"></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Noodles:</td>
+            <td><input type="number" id="price3" name="price3"></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Cheese:</td>
+            <td><input type="number" id="price4" name="price4"></td>
+        </tr>
+        <tr>
+           <th colspan="2">Total price</th>
+           <td id="total">0</td>
+        </tr>
+    </table>
+
+    </fieldset>
+    </form>
+
+    <script>
+
+        const inputs = document.querySelectorAll("input[type='number']");
+
+        inputs.forEach(input => {
+            input.addEventListener("input", calculateTotal);
+            
+        });
+        function calculateTotal() {
+        
+            let total = 0;
+            inputs.forEach(input =>{
+                total += Number(input.value) || 0;
+            });
+       
+         document.getElementById("total").textContent = total;
+        }
+    </script>
+</body>
+</html>
