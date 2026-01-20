@@ -1,0 +1,9 @@
+CREATE DATABASE prices_db;
+
+USE prices_db;
+
+CREATE TABLE totals (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    total DECIMAL(10,2),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
