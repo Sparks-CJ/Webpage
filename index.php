@@ -10,62 +10,6 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="dekut.css">
-
-    <!-- Inline fallback colors and fixes (in case dekut.css fails) -->
-    <style>
-        body { background-color: #f4f4f4; font-family: Arial, Helvetica, sans-serif; margin:0; padding:0; }
-        a { text-decoration: none; color: inherit; }
-        ul { list-style: none; }
-        .container { width: 90%; max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-
-        /* Header */
-        .site-header { width: 100%; border-top: 3px solid #000; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; box-shadow: 0 2px 6px rgba(10,50,7,0.3),0 6px 15px rgba(10,50,7,0.5); position: fixed; top:0; z-index:1000; }
-        .top-bar { background-color: #0f4a0a; color: #f0f0f0; padding: 10px 0; font-size:12px; font-weight:bold; }
-        .top-bar-left ul, .top-bar-right ul { display:flex; align-items:center; }
-        .top-bar-left li { margin-right: 12px; padding-right:12px; border-right:1px solid #c0c0c0; }
-        .top-bar-left li:last-child { border-right:none; }
-        .top-bar-right li { margin-left: 20px; }
-        .top-bar a:hover { color: #fde100; }
-
-        .main-nav { background-color: #0f4a0a; padding:15px 0; border-top:1px solid #1a5a14; }
-        .logo-container { display:flex; align-items:center; }
-        .logo-image { width:70px; height:70px; background-color:#fde100; margin-right:15px; display:grid; place-items:center; color:#333; font-size:10px; font-weight:bold; text-align:center; border-radius:50%; }
-        .logo-image::before { content:'LOGO'; }
-        .logo-text .logo-title { display:block; color:white; font-size:20px; font-weight:bold; }
-        .logo-text .logo-motto { display:block; color:#fde100; font-size:14px; font-style:italic; }
-        .main-menu ul { display:flex; }
-        .main-menu li { margin-left:35px; }
-        .main-menu a { color:white; font-weight:bold; font-size:16px; padding-bottom:20px; position:relative; transition:color 0.3s; }
-        .main-menu a .dropdown-arrow { font-size:12px; margin-left:4px; }
-        .main-menu a.active { color:#fde100; }
-        .main-menu a.active::after { content:''; position:absolute; bottom:0; left:0; width:100%; height:4px; background-color:#fde100; }
-        .main-menu a:not(.active):hover { color:#fde100; }
-
-        /* Info section */
-        .content { padding-top: 130px; }
-        .info-section { background-color:#0f4a0a; color:#fff; padding:25px 0; }
-        .container.column-layout { flex-direction:column; align-items:flex-start; }
-        .info-block { width:100%; margin-bottom:15px; }
-        .info-block h3 { font-size:18px; font-weight:bold; margin-bottom:8px; }
-        .info-block p { font-size:16px; line-height:1.5; }
-        .info-divider { border:0; height:2px; background-color:#d8baff; width:100%; margin:20px 0; }
-
-        /* Main content and sidebar */
-        .page-content { display:flex; gap:30px; padding:30px 0; align-items:flex-start; width:100%; }
-        .main-content-area { flex:3; background-color:#fff; padding:25px; border:1px solid #ddd; border-radius:5px; }
-        .main-content-area h2 { color:#333; margin-bottom:15px; }
-        .main-content-area p { color:#555; line-height:1.6; margin-bottom:15px; }
-        .sidebar { flex:1; background-color:#f9f9f9; padding:20px; border:1px solid #ddd; border-radius:5px; }
-        .sidebar h3 { color:#333; margin-bottom:15px; border-bottom:2px solid #0f4a0a; padding-bottom:8px; }
-        .sidebar-links li { margin-bottom:12px; }
-        .sidebar-links a { color:#0f4a0a; font-weight:bold; transition:all 0.2s ease-in-out; }
-        .sidebar-links a:hover { color:#000; text-decoration:underline; }
-
-        /* Running total table */
-        table, td, th { border:1px solid black; padding:8px; }
-        table { border-collapse:collapse; width:100%; }
-        input[type="number"]:focus { border:1.5px solid blue; outline:none; }
-    </style>
 </head>
 <body>
 
@@ -205,4 +149,3 @@
 
 </body>
 </html>
-
