@@ -1,0 +1,5 @@
+services:
+  - type: web
+    name: dekut-php-project
+    env: docker
+    plan: free
