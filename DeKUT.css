@@ -1,9 +1,9 @@
 /* --- Global Resets and Variables --- */
 :root {
-    --dkut-green: #0f4a0a; /* A dark green sampled from the image */
-    --dkut-yellow: #fde100; /* A bright yellow sampled from the image */
-    --text-light: #f0f0f0;  /* Off-white for text */
-    --text-secondary: #c0c0c0; /* Grey for separators */
+    --dkut-green: #0f4a0a;
+    --dkut-yellow: #fde100;
+    --text-light: #f0f0f0;
+    --text-secondary: #c0c0c0;
 }
 
 * {
@@ -14,17 +14,11 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f4f4; /* Page background */
+    background-color: #f4f4f4;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-ul {
-    list-style: none;
-}
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
 
 .container {
     width: 90%;
@@ -35,22 +29,19 @@ ul {
     align-items: center;
 }
 
-/* --- Site Header --- */
+/* --- Header --- */
 .site-header {
     width: 100%;
-    /* This creates the thin black line at the very top */
     border-top: 3px solid #000;
-    border-bottom-left-radius:10px ;
+    border-bottom-left-radius:10px;
     border-bottom-right-radius: 10px;
-    box-shadow: 0 2px 6px rgba(10, 50, 7, 0.3), /* soft near shadow */ 0 6px 15px rgba(10, 50, 7, 0.5); /* larger diffused shadow */
+    box-shadow: 0 2px 6px rgba(10,50,7,0.3), 0 6px 15px rgba(10,50,7,0.5);
+    position: fixed;
+    z-index:1000;
+}
+.content { padding-top: 130px; }
 
-     position: fixed; 
-    /* z-index: 1000;  */
-}
-.content {
-    padding-top: 130px;
-}
-/* --- 1. Top Utility Bar --- */
+/* Top utility bar */
 .top-bar {
     background-color: var(--dkut-green);
     color: var(--text-light);
@@ -58,223 +49,59 @@ ul {
     font-size: 12px;
     font-weight: bold;
 }
+.top-bar-left ul, .top-bar-right ul { display:flex; align-items:center; }
+.top-bar-left li { margin-right: 12px; padding-right:12px; border-right:1px solid var(--text-secondary); }
+.top-bar-left li:last-child { border-right:none; }
+.top-bar-right li { margin-left:20px; }
+.top-bar a:hover { color: var(--dkut-yellow); }
+.search-icon { font-size:16px; }
 
-.top-bar-left ul,
-.top-bar-right ul {
-    display: flex;
-    align-items: center;
-}
-
-.top-bar-left li {
-    margin-right: 12px;
-    padding-right: 12px;
-    /* This adds the vertical bar separator */
-    border-right: 1px solid var(--text-secondary);
-}
-
-.top-bar-left li:last-child {
-    border-right: none;
-}
-
-.top-bar-right li {
-    margin-left: 20px;
-}
-
-.top-bar a:hover {
-    color: var(--dkut-yellow);
-}
-
-.search-icon {
-    font-size: 16px;
-}
-
-/* --- 2. Main Navigation Bar --- */
-.main-nav {
-    background-color: var(--dkut-green);
-    padding: 15px 0;
-    border-top: 1px solid #1a5a14; /* Subtle line between the two bars */
-}
-
-/* Logo Area */
-.logo-container {
-    display: flex;
-    align-items: center;
-}
-
+/* Main Navigation */
+.main-nav { background-color: var(--dkut-green); padding:15px 0; border-top:1px solid #1a5a14; }
+.logo-container { display:flex; align-items:center; }
 .logo-image {
-    /* This is a placeholder div styled to look like the crest */
-    width: 70px;
-    height: 70px;
-    background-color: var(--dkut-yellow);
-    margin-right: 15px;
-    /* In a real project, this would be an <img> tag */
-    display: grid;
-    place-items: center;
-    color: #333;
-    font-size: 10px;
-    font-weight: bold;
-    text-align: center;
-    border-radius: 50%;
+    width:70px; height:70px; background-color: var(--dkut-yellow); margin-right:15px;
+    display:grid; place-items:center; color:#333; font-size:10px; font-weight:bold; text-align:center;
+    border-radius:50%;
 }
-.logo-image::before {
-    content: 'LOGO';
-}
+.logo-image::before { content:'LOGO'; }
+.logo-text .logo-title { color:white; font-size:20px; font-weight:bold; display:block; }
+.logo-text .logo-motto { color: var(--dkut-yellow); font-size:14px; font-style:italic; display:block; }
 
-
-.logo-text .logo-title {
-    display: block;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.logo-text .logo-motto {
-    display: block;
-    color: var(--dkut-yellow);
-    font-size: 14px;
-    font-style: italic;
-}
-
-/* Main Menu Links */
-.main-menu ul {
-    display: flex;
-}
-
-.main-menu li {
-    margin-left: 35px;
-}
-
+.main-menu ul { display:flex; }
+.main-menu li { margin-left:35px; }
 .main-menu a {
-    color: white;
-    font-weight: bold;
-    font-size: 16px;
-    padding-bottom: 20px; /* Creates space for the underline */
-    position: relative;
-    transition: color 0.3s ease;
+    color:white; font-weight:bold; font-size:16px; padding-bottom:20px; position:relative; transition:0.3s;
 }
-
-.main-menu a .dropdown-arrow {
-    font-size: 12px;
-    margin-left: 4px;
-}
-
-/* Active link style (yellow underline) */
-.main-menu a.active {
-    color: var(--dkut-yellow);
-}
-
+.main-menu a.active { color: var(--dkut-yellow); }
 .main-menu a.active::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background-color: var(--dkut-yellow);
+    content:''; position:absolute; bottom:0; left:0; width:100%; height:4px; background-color: var(--dkut-yellow);
 }
+.main-menu a:hover { color: var(--dkut-yellow); }
+.main-menu a .dropdown-arrow { font-size:12px; margin-left:4px; }
 
-.main-menu a:not(.active):hover {
-    color: var(--dkut-yellow);
-}
+/* Info section */
+.info-section { background-color: var(--dkut-green); color:#fff; padding:25px 0; }
+.container.column-layout { flex-direction: column; align-items:flex-start; }
+.info-block { width:100%; margin-bottom:15px; }
+.info-block h3 { font-size:18px; font-weight:bold; margin-bottom:8px; }
+.info-block p { font-size:16px; line-height:1.5; }
 
+/* Divider */
+.info-divider { border:0; height:2px; background-color:#d8baff; width:100%; margin:20px 0; }
 
-/* --- 3. Main Content Info Section --- */
-.info-section {
-    background-color: var(--dkut-green);
-    color: #fff;
-    padding: 25px 0; /* Vertical padding for the whole green section */
-}
+/* Main content + sidebar */
+.page-content { display:flex; gap:30px; padding:30px 0; align-items:flex-start; width:100%; }
+.main-content-area { flex:3; background-color:#fff; padding:25px; border:1px solid #ddd; border-radius:5px; }
+.main-content-area h2 { color:#333; margin-bottom:15px; }
+.main-content-area p { color:#555; line-height:1.6; margin-bottom:15px; }
+.sidebar { flex:1; background-color:#f9f9f9; padding:20px; border:1px solid #ddd; border-radius:5px; }
+.sidebar h3 { color:#333; margin-bottom:15px; border-bottom:2px solid var(--dkut-green); padding-bottom:8px; }
+.sidebar-links li { margin-bottom:12px; }
+.sidebar-links a { color: var(--dkut-green); font-weight:bold; transition:0.2s; }
+.sidebar-links a:hover { color:#000; text-decoration:underline; }
 
-/* This helper class makes the container stack its children vertically */
-.container.column-layout {
-    flex-direction: column;
-    align-items: flex-start; /* Align content to the left */
-}
-
-.info-block {
-    width: 100%; /* Make block take full width of container */
-}
-
-.info-block h3 {
-    padding-top: 5px;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 8px;
-    color: #fff; /* Explicitly white */
-}
-
-.info-block p {
-    font-size: 16px;
-    line-height: 1.5;
-    color: #fff; /* Explicitly white */
-}
-
-.info-divider {
-    border: 0;
-    height: 2px;
-    /* A light purple/pink color sampled from the screenshot */
-    background-color: #d8baff; 
-    width: 100%;
-    margin: 20px 0; /* Space above and below the divider */
-}
-
-
-/* --- 4. Page Content & Sidebar (NEW STYLES) --- */
-
-.page-content {
-    /* This is our container for the two-column layout. 
-       We re-use the .container class to set the width and margins. */
-    display: flex;
-    gap: 30px; /* Space between main content and sidebar */
-    padding: 30px 0; /* Space above and below this whole section */
-    align-items: flex-start; /* Aligns items to the top */
-}
-
-.main-content-area {
-    flex: 3; /* Takes up 3 parts of the available space */
-    background-color: #fff; /* White background to stand out */
-    padding: 25px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.main-content-area h2 {
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.main-content-area p {
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-.sidebar {
-    flex: 1; /* Takes up 1 part of the available space */
-    background-color: #f9f9f9;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.sidebar h3 {
-    color: #333;
-    margin-bottom: 15px;
-    border-bottom: 2px solid var(--dkut-green);
-    padding-bottom: 8px;
-}
-
-.sidebar-links li {
-    margin-bottom: 12px;
-}
-
-.sidebar-links a {
-    color: var(--dkut-green);
-    font-weight: bold;
-    transition: all 0.2s ease-in-out;
-}
-
-.sidebar-links a:hover {
-    color: #000;
-    text-decoration: underline;
-}
+/* Table */
+table, td, th { border:1px solid black; padding:8px; }
+table { border-collapse:collapse; width:100%; }
+input[type="number"]:focus { border:1.5px solid blue; outline:none; }
